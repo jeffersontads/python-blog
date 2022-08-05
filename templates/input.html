@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %} input data {% endblock %}
+{% block body %} 
+
+
+<h1 class="title mt-5">PAINEL ADMINISTRATIVO - ADICIONAR NOTICIAS </h1>
+<p>Adicione uma noticia, não esqueça de colocar um titulo, categoria e uma descrição para sua notícia</p>
+
+<div class="form-floating mt-3 mb-3">
+        <input type="text" name="titulo" for="titulo"  class="form-control" id="floatingInputTitulo">
+        <label for="floatingInput">Titulo da notícia</label>
+  </div>
+
+<div class="form-floating mt-3 mb-3 was-validated""> 
+    <textarea class="form-control" id="floatingTextarea2" name="descricao" for="descricao" style="height: 100px"></textarea>
+    <label for="floatingTextarea2">Descrição completa</label>
+  </div>
+
+  <div class="form-floating mb-5">
+    <select class="form-select" id="floatingSelect">
+      <option selected>Escolha uma categoria</option>
+      <option value="tecnologia">Tecnologia</option>
+      <option value="games">Games</option>
+      <option value="desenvolvimentoWeb">Desenvolvimento Web</option>
+    </select>
+    <label for="floatingSelect">Escolha uma Categoria</label>
+  </div>
+
+  <div>
+    <button href="#" type="submit" name="submit" class="btn btn-success float-end">Cadastrar</button>
+    <a href="#" class="btn btn-warning float-end">Limpar</a>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary float-end">Voltar</a>
+
+
+  </div>
+
+{% endblock %}
