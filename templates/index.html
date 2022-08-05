@@ -1,41 +1,39 @@
-{% extends 'base.html' %}
-
-{% block title %} Jefferson Sotto {% endblock %}
-
-{% block body %}
+{% extends 'base.html' %} {% block title %} Jefferson Sotto {% endblock %} {%
+block body %}
 
 <h1 class="title mt-5">PAINEL ADMINISTRATIVO - MINHA LISTA DE NOTICIAS</h1>
 <p>VEJA ABAIXO TODAS AS NOTICAS OU SELECIONE POR CATEGORIA</p>
 
-<a href="{{ url_for('input_data') }}" class="btn btn-primary mt-5 mb-5">Input data</a>
+<a href="{{ url_for('input_data') }}" class="btn btn-primary mt-5 mb-5"
+  >Input data</a
+>
 
 <table class="table responsive mt-5">
-    <thead class="thead-light">
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">TITULO</th>
-            <th scope="col">DATA CRIAÇÃO</th>
-            <th scope="col">CATEGORIA</th>
-            <th scope="col">AUTOR</th>
-            <th scope="col">AÇÃO</th>
-        </tr>
-    </thead>
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">TITULO</th>
+      <th scope="col">DATA CRIAÇÃO</th>
+      <th scope="col">CATEGORIA</th>
+      <th scope="col">AUTOR</th>
+      <th scope="col">AÇÃO</th>
+    </tr>
+  </thead>
 
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Criando um blog com Wordpress</td>
-            <td>20/07/2022</td>
-            <td>Desenvolvimento Web</td>
-            <td>Jefferson R. Sotto</td>
-            <td>
-                <a href="#" class="btn btn-danger">Deletar</a>
-                <a href="#" class="btn btn-secondary">Editar</a>
-                <a href="#" class="btn btn-primary">Acessar</a>
-            </td>
-        </tr>
-
-    </tbody>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Criando um blog com Wordpress</td>
+      <td>20/07/2022</td>
+      <td>Desenvolvimento Web</td>
+      <td>Jefferson R. Sotto</td>
+      <td>
+        <a href="#" class="btn btn-danger">Deletar</a>
+        <a href="#" class="btn btn-secondary">Editar</a>
+        <a href="#" class="btn btn-primary">Acessar</a>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 {% endblock %}
