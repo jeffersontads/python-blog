@@ -25,14 +25,16 @@ class Noticias(db.Model):
     resumo = db.Column(db.String(120), nullable=False)
     autor = db.Column(db.String(100), nullable=False)
     date = db.Column(db.String(6), nullable=False)
+    image_data = db.Column(db.String(6), nullable=False)
 
-    def __init__(self, titulo, descricao, categoria, resumo, autor, date):
+    def __init__(self, titulo, descricao, categoria, resumo, autor, date, image_data):
         self.titulo = titulo
         self.descricao = descricao
         self.categoria = categoria
         self.resumo = resumo
         self.autor = autor
         self.date = date
+        self.image_data = image_data
 
 
 @app.route('/')
@@ -50,8 +52,10 @@ def input_data():
         resumo = request.form['resumo']
         autor = request.form['autor']
         date = request.form['date']
+        image_data = request.form['image']
 
-        add_data = Noticias(titulo, descricao, categoria, resumo, autor, date)
+        add_data = Noticias(titulo, descricao, categoria,
+                            resumo, autor, date, image_data)
 
         db.session.add(add_data)
         db.session.commit()
@@ -79,6 +83,7 @@ def process_edit():
     data_noticias.resumo = request.form['resumo']
     data_noticias.autor = request.form['autor']
     data_noticias.date = request.form['date']
+    data_noticias.image_data = request.form['image']
 
     db.session.commit()
 
