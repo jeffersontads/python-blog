@@ -29,12 +29,19 @@ messages %}
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
   {% for noticia in data %}
+
   <div class="col">
-    <div class="card h-100">
-      <img src="..." class="card-img-top" alt="..." />
+    <div class="card h-100 w-100">
+      <div>
+        <img
+          class="img-responsive w-100"
+          src="https://www.global-esports.news/wp-content/uploads/2022/01/Valorant-Ranking-distribution.jpg"
+        />
+      </div>
+
       <div class="card-body">
         <h5 class="card-title">{{loop.index}} - {{noticia.titulo}}</h5>
-        <p class="card-text">{{noticia.resumo}}</p>
+        <p class="card-text">{{noticia.resumo}} ---- {{noticia.image_data}}</p>
         <a
           href="{{ url_for('edit_data', id=noticia.id) }}"
           class="btn btn-secondary btn-sm"
