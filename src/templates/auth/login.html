@@ -1,0 +1,50 @@
+{% extends './base.html' %} {% block title %} login {% endblock %} {% block body
+%} {% block customCSS %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/login.css') }}"
+/>
+{% endblock %}
+
+<div class="container text-center w-50 jefferson">
+  {% for usuario in users %} {{usuario.username}} - {{usuario.password}} {%
+  endfor %}
+  <form class="form-signin" action="/login" method="post">
+    <img
+      class="mb-4"
+      src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg"
+      alt=""
+      width="72"
+      height="72"
+    />
+    <h1 class="h3 mb-3 font-weight-normal">Por favor faça login</h1>
+
+    <input
+      type="username"
+      name="username"
+      id="inputUserName"
+      class="form-control"
+      placeholder="nome de usuário"
+      required
+      autofocus
+    />
+    <br />
+    <input
+      type="password"
+      name="password"
+      id="inputPassword"
+      class="form-control"
+      placeholder="Senha"
+      required
+    />
+    <div class="checkbox mb-3">
+      <label> <input type="checkbox" value="remember-me" /> Lembrar</label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+      Logar
+    </button>
+    <p class="mt-5 mb-3 text-muted">&copy; Jefferson R. Sotto 2022/2023</p>
+  </form>
+</div>
+
+{% endblock %}
